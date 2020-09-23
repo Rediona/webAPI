@@ -1,0 +1,29 @@
+<!--almost the same as register -->
+<html>
+    <body onload="load()" style="background-color: #008080" >
+        <h1 style="color: #FFF;">Login</h1><hr>        
+        <form action="/login" method="POST">
+            <div>                 
+                <input type="text" placeholder="e-mail" id="mail" name="mail" required>
+            </div><br>
+            <div> 
+                <input type="password" placeholder="password" id="password" name="password" required>
+            </div><br>
+            <button type="submit">Login</button>
+        </form>  
+        <a style="color: #FFF;" href="http://localhost:3000/index.html">Home page</a><br> <!--anchor tag to get us back to login page-->    
+        <div><br>
+            <h2 style="color: #FFF;">Admin Login</h2><hr/>         
+            <form action="/ADMIN" method="POST">
+                <div> 
+                    <input type="password" placeholder="password" id="adminPassword" name="password" required>
+                </div><br>
+                <form action="/cell_create">
+                    <input type="submit" value="Login" />
+                </form>
+            </form>  
+        </div>
+        <script src="../routes/user.js"></script>
+    </body>
+</html>
+

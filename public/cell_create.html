@@ -1,0 +1,48 @@
+<html>
+    <body style="background-color: #008080">
+        <div>
+            <h3 style="color: #FFF;">
+            Create cell by filling the form
+            </h3><hr/>
+            <form action="/cell_create" method="POST">
+                <input placeholder="Name" name="create_cell_name"/>
+                <input placeholder="Cds" name="create_cd"/>
+                <input placeholder="Parent cell" name="create_father_cell"/>
+                <input placeholder="Diameter" name="create_diameter"/>
+                <input placeholder="Progenitor short name" name="create_progenitor_associated"/>
+                <button >Create</button>
+            </form><br>             
+        </div>        
+        <div><br>
+            <h3 style="color: #FFF;">
+                Update cell by filling the form
+                </h3><hr/>
+                <form action="/cell_update" method="POST">
+                    <input placeholder="Cell ID" name="id"/>
+                    <input placeholder="Name" name="up_cell_name"/>
+                    <input placeholder="Cds" name="up_cd"/>
+                    <input placeholder="Parent cell" name="up_father_cell"/>
+                    <input placeholder="Diameter" name="up_diameter"/>
+                    <input placeholder="Progenitor short name" name="up_progenitor_associated"/>
+                    <button >Update</button>
+                </form><br>             
+            </div>        
+            <div><br> 
+            <h3 style="color: #FFF;">Delete cell by filling the id</h3>
+            <hr/>
+            <form action="/cell_delete" method="POST">
+                <input placeholder="Cell ID" name="id" />                
+                <button >Delete</button>
+            </form><br>
+        </div>
+        <div><br>
+            <h3 style="color: #FFF;">Delete user by filling the id</h1>
+            <hr/>
+            <form action="/user_delete" method="POST">
+                <input  placeholder="User ID" name="id" />                
+                <button >Delete</button>
+            </form>            
+        </div>
+        <a style="color: #FFF;" href="http://localhost:3000/index.html">Home page</a> <!--anchor tag to get us back to login page-->
+    </body>
+</html>

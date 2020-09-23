@@ -1,0 +1,324 @@
+body {
+  font-size: 16px;
+  color: #FFF;
+  background-color:#F0FFFF ;/** Azure #F0FFFF, PowderBlue #B0E0E6****/
+  font-family: 'Roboto Mono', monospace;
+}
+
+#header-nav {
+  background-color: #20B2AA; /**LightSeaGreen#20B2AA , Teal #008080**/
+  border-radius: 0;
+  border: 0;
+}
+
+#logo-img {
+  background: url('../images/marrow_logo150px.png') no-repeat;
+  width: 150px;
+  height: 150px;
+  margin: 10px 15px 10px 0; 
+}
+.navbar-brand {
+  padding-top: 50px;
+  
+}
+.navbar-brand h1 { /* Page name */
+  font-family: 'Roboto', sans-serif; 
+  color: #F0FFFF;
+  font-size: 1.8em; 
+  margin-top: 0px;
+  margin-bottom: 0px;
+  line-height: .75;
+}
+.navbar-brand h2 { /* Page name */
+  font-family: 'Roboto', sans-serif; 
+  color: #F0FFFF;
+  font-size: 1.3em; 
+  margin-top: 0px;
+  margin-bottom: 0px;
+  line-height: .75;
+}
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+.navbar-brand p { /* devs */
+  color: #000;
+  text-transform: uppercase;
+  font-size: .7em;
+  margin: 40px 5px 20px 0; 
+  font-family: 'Roboto', sans-serif;
+  
+}
+
+.navbar-brand p span { /* devs icon */
+  vertical-align: middle;
+}
+
+#nav-list {
+  margin-top: 10px;
+}
+#nav-list a {
+  color:  #F0FFFF;
+  text-align: center;
+}
+#nav-list a:hover {
+  background: #b1e0e4;
+}
+#nav-list a span {
+  font-size: 1.8em;
+}
+
+.navbar-header button.navbar-toggler{
+  border: #F0FFFF;
+}
+
+.navbar-header button.navbar-toggler {
+  clear: both;
+  margin-top: -30px;
+}
+
+/*form in SEARCH*/
+form {
+  width:200px;
+  margin:auto;
+  }
+  .search {
+  padding:8px 15px;
+  background:#fafafa(50, 50, 50, 0.2);
+  border:1.5px solid #dbdbdb;
+  width:100px;
+  }
+  .button {
+  position:relative;
+  padding:6.5px 15px;
+  border:2px solid #207cca;
+  background-color:#207cca;
+  color:#fafafa;
+  }
+  .button:hover  {
+  background-color:#fafafa;
+  color:#207cca;
+  }
+  .arrow {
+  position:relative;
+  background:#207cca;
+  margin-left:-5px;
+  }
+  .arrow:after {
+  right:100%;
+  top:50%;
+  border:solid transparent;
+  content: " ";
+  height:0;
+  width:0;
+  position: absolute;
+  border-color:rbga(32, 124, 202, 0);
+  border-right-color:#207cca;
+  border-width:10px;
+  margin-top:-7px;
+  }
+/*end of SEARCH*/
+
+
+/*------- HOME PAGE----------- */
+.jumbotron img{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  border-radius: 5%
+  }
+.container .jumbotron {
+  margin-top: 30px;
+  scroll-margin-bottom: 30px;
+  padding: 0;
+  box-shadow: 0 0 10px  #F0FFFF;
+  border: 2px solid  #F0FFFF;
+ 
+}
+
+/*--------TILES-------*/
+#myelo-tile, #lymph-tile {
+  width: 150px;
+  margin: 0 auto 15px;
+}
+#myelo-tile, #lymph-tile, #users-tile{
+  height: 200px;
+  width: 100%;
+  margin-bottom: 15px;
+  position: relative;
+  border: 2px solid  #F0FFFF;
+  overflow: hidden;
+}
+#myelo-tile:hover, #lymph-tile:hover, #users-tile:hover {
+  box-shadow: 0 1px 5px 1px #cccccc;
+}
+#myelo-tile {
+  background: url('../images/dyes1.jpg') no-repeat;
+  background-position: center;
+  border-radius: 10%
+}
+#lymph-tile {
+  background: url('../images/human-karyotype.jpg') no-repeat;
+  background-position: center;
+  border-radius: 10%
+}
+#users-tile {
+  background: url('../images/coat.jpg') no-repeat;
+  background-position: center;
+  border-radius: 10%
+}
+#myelo-tile span, #lymph-tile span, #users-tile span{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.6em;
+  background-color: #000;
+  color: #fff;
+  opacity: .3;
+}
+/* END HOME PAGE */
+
+/*TITLES IN MYELO & LYMPH PAGES*/
+#myelo-title,#lymph-title{
+  position: relative;
+  color: rgb(91, 150, 158);
+  text-align: center;
+}
+
+
+/*ABOUT*/
+#about, #sniff{
+color:  #353e3f;
+
+}
+
+/* FOOTER */
+.panel-footer {
+  margin-top: 30px;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  background-color: #6e8f94;
+  border-top: 0;
+}
+
+
+.panel-footer div.row {
+  margin-bottom: 35px;
+}
+/*myelo , lymph , search footer*/
+#footer {
+  margin-top: 30%;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  background-color: #6e8f94;
+  border-top: 0;  
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+/*END FOOTER*/
+
+
+/****LISTS Displaying****/
+
+#users-list, #lymphs-list, #mega-list, #myelo-list, #results-list {
+  padding-inline-start: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 2fr));
+  grid-gap: 20px;
+}
+
+.users, .lymphs, .mega , .myelo, .cells  {
+  list-style-type: none;
+  background-color: #90cfc5;
+  border-radius: 10px;
+  padding: 20px 20px 20px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+  'title image'
+  'secondary image';
+  text-align: left;
+}
+
+ #results-list {
+  padding-inline-start: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
+  grid-gap: 20px;
+}
+
+
+
+
+.users > h2, .lymphs > h2, .mega > h2, .myelo> h2, .cells>h2 {
+  grid-area: title;
+  margin-bottom: 0px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.users > p .lymphs > p, .mega > p, .myelo> p, .cells> p{
+  grid-area: secondary;
+  margin: 20px;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.users > img, .lymphs > img, .mega > img, .myelo> img, .cells> img{
+  max-height: 150px;
+  max-width:150px;
+  grid-area: image;
+  align-content: flex-end;
+  border-radius: 50%;  
+}
+
+#wrapper {
+  position: relative;
+  text-align: center;
+}
+
+
+/***MYELO PAGE**/
+/***PUT PICS IN BUTTONS**/
+
+#mep{
+  background-image: url('../images/rbcs.png');
+  background-size: 200px 200px;
+  height: 200px;  
+  width: 200px;
+  position: relative;
+}
+#gmp{
+  background-image: url('../images/neutro.png');
+  background-size: 200px 200px;
+  height: 200px;  
+  width: 200px;
+  position: relative;
+}
+#lymphs{
+  background-image: url('../images/mono.png');
+  background-size: 200px 200px;
+  height: 200px;  
+  width: 200px;
+  position: relative;
+}
+
+
+
+#mep span, #gmp span, #lymphs span{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.0em;
+  background-color: rgb(6, 7, 7);
+  color: #fff;
+  opacity: .3;
+}
+
+h3, #search{
+  color: #353e3f;
+}

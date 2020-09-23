@@ -1,0 +1,90 @@
+use cells;
+
+select * from progenitors;
+
+CREATE TABLE progenitors(
+short_name VARCHAR(100) PRIMARY KEY,
+cds VARCHAR(100),
+progenitor_name VARCHAR(100),
+parent_cell VARCHAR(50)
+);
+
+CREATE TABLE cells(
+id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+cell_name VARCHAR(100), 
+cd VARCHAR(100),
+father_cell VARCHAR(50),
+diameter VARCHAR(50),
+progenitor_associated VARCHAR(100),
+CONSTRAINT  FOREIGN KEY(progenitor_associated)
+	REFERENCES progenitors(short_name)
+    ON DELETE CASCADE
+);
+
+INSERT INTO progenitors
+VALUES('cml','CD34/CD38/CD45RA/CD123','Common Myeloid Progenitor','Hematopoietic Stem Cell');
+
+INSERT INTO progenitors
+VALUES('gmp','CD34/CD38/CD45RA/CD123','Granulocyte Monocyte Progenitor','Common Myeloid Progenitor');
+
+INSERT INTO progenitors
+VALUES('clp','CD10/CD34/CD38','Common Lymphoid Progenitor','Hematopoietic Stem Cell');
+
+INSERT INTO progenitors
+VALUES('mep','CD34/CD38/CD45RA/CD123','Megakaryocyte Erythroid Progenitor','Common Myeloid Progenitor');
+
+INSERT INTO cells (cell_name,cd,father_cell,diameter,progenitor_associated)
+VALUES('B-cell','CD19/CD20','Small Lymphocyte','7μm','clp');
+
+INSERT INTO cells (cell_name,cd,father_cell,diameter,progenitor_associated)
+VALUES('Th-cell','CD3/CD4','Small Lymphocyte','7μm','clp');
+
+INSERT INTO cells (cell_name,cd,father_cell,diameter,progenitor_associated)
+VALUES('Tc-cell','CD3/CD8','Small Lymphocyte','7μm','clp');
+
+INSERT INTO cells (cell_name,cd,father_cell,diameter,progenitor_associated)
+VALUES('NK-cell','CD16/C56','Prolymphocyte','7μm','clp');
+
+INSERT INTO cells (cell_name,cd,father_cell,diameter,progenitor_associated)
+VALUES('Tc-cell','CD3/CD8','Small Lymphocyte','7μm','clp');
+
+INSERT INTO cells (cell_name,cd,father_cell,diameter,progenitor_associated)
+VALUES('Monocyte','CD14/CD16','Myeloblast','18μm','gmp');
+
+INSERT INTO cells (cell_name,cd,father_cell,diameter,progenitor_associated)
+VALUES('Eosinophil','non-specific','Myeloblast','12-17μm','gmp');
+
+INSERT INTO cells (cell_name,cd,father_cell,diameter,progenitor_associated)
+VALUES('Basophil','CD63','Myeloblast','14-16μm','gmp');
+
+INSERT INTO cells (cell_name,cd,father_cell,diameter,progenitor_associated)
+VALUES('Neutrophil','CD15/CD16','Myeloblast','12-14μm','gmp');
+
+INSERT INTO cells (cell_name,cd,father_cell,diameter,progenitor_associated)
+VALUES('Erythrocytes','CD36','Proerythroblast','6-8μm','mep');
+
+INSERT INTO cells (cell_name,cd,father_cell,diameter,progenitor_associated)
+VALUES('Platelets','CD41/CD61','Megakaryoblast','2-3μm','mep');
+
+
+CREATE TABLE users(
+id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+first_name VARCHAR(100),
+last_name VARCHAR(100),
+mail VARCHAR(100)
+);
+
+INSERT INTO users (first_name,last_name,mail)
+VALUES('Redi','Kane','redi@mail');
+
+INSERT INTO users (first_name,last_name,mail)
+VALUES('Beni','Kane','benii@mail');
+
+INSERT INTO users (first_name,last_name,mail)
+VALUES('Lola','Kane','lola@mail');
+
+INSERT INTO users (first_name,last_name,mail)
+VALUES('Biandi','Kane','biandi@mail');
+
+
+select cell_name,cd,father_cell from cells union all select cell_name,cd,father_cell from progenitors;
