@@ -239,17 +239,35 @@ router.post('/user_delete', async (req, res) => {
 //export this router out of this file
 module.exports = router
 
+/*
 const http = require("http");
 const url = "http://localhost:3003/users";
 
 http.get(url, res => {
   res.setEncoding("utf8");
-  let body = "";
+  let users = "";
   res.on("data", data => {
-    body += data;
+    users += data;
   });
   res.on("end", () => {
-    body = JSON.parse(body);
-    console.log(body);
+    users = JSON.parse(users);
+    console.log(users);
   });
 });
+*/
+
+router.post('/admin_log',async(req,res)=>{
+
+    const connection = getConnection()
+
+    const password = req.body.password
+    const mail = req.body.mail
+
+    if((mail==="redi@mail" && password==="redi") || mail==="petros@mail" && password==="petros"){
+        res.redirect('../public/cell_create.html')
+    }else {
+        res.redirect('../public/login.html')
+    }
+  res.end()
+})
+
