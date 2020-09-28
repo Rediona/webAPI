@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 //serve static files
 app.use(express.static('./public'))
 
-app.use(morgan('combined'))
+app.use(morgan('short'))
 //app.use(morgan('combined')) //for more log info
 app.use(cors())
 

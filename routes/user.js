@@ -2,6 +2,8 @@
 
 const express = require('express')
 const mysql = require('mysql')
+const fs = require('fs')
+//const bcrypt = require('bcrypt')
 
 
 //declare new function router
@@ -17,7 +19,7 @@ const pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
     database: 'cells',
-    password: 'Bioinfoinfofo1!'
+    
 })
 
 function getConnection(){
@@ -236,6 +238,22 @@ router.post('/user_delete', async (req, res) => {
 
 
 
+router.post('/admin_log',async(req,res)=>{
+
+    const connection = getConnection()
+
+    const password = req.body.password
+    const mail = req.body.mail
+
+    if((mail==="redi@mail" && password==="redi") || mail==="petros@mail" && password==="petros"){
+        res.redirect('../public/cell_create.html')
+    }else {
+        res.redirect('../public/login.html')
+    }
+  res.end()
+})
+
+
 //export this router out of this file
 module.exports = router
 
@@ -255,19 +273,3 @@ http.get(url, res => {
   });
 });
 */
-
-router.post('/admin_log',async(req,res)=>{
-
-    const connection = getConnection()
-
-    const password = req.body.password
-    const mail = req.body.mail
-
-    if((mail==="redi@mail" && password==="redi") || mail==="petros@mail" && password==="petros"){
-        res.redirect('../public/cell_create.html')
-    }else {
-        res.redirect('../public/login.html')
-    }
-  res.end()
-})
-
